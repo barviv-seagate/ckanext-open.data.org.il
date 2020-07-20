@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{%- block meta -%}
+  {{ super() }}
+  <meta name="og:image" content="{{ h.settings().og_image }}" />
+  <meta name="og:image:alt" content="{{ h.settings().og_image_alt }}" />
+{%- endblock -%}
+
+{% block styles %}
+  {{ super() }}
+  {% resource 'open_data_org_il/open_data_org_il-theme.css' %}
+{% endblock %}

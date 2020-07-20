@@ -1,0 +1,1 @@
+recursive-include ckanext/kaplan *.html *.json *.js *.less *.css *.mo *.eot *.svg *.ttf *.woff *.woff2 *.png *.txt
