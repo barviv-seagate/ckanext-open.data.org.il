@@ -1,0 +1,9 @@
+<div class="box">
+    <div class="inner">
+        <h3>{{ _('Last Updated Datasets') }}</h3>
+        <div style="background: #fbfbfb url('../../../base/images/bg.png'); border: 1px solid #dddddd; border-width: 1px 0; padding: 15px;">
+            {% snippet "snippets/package_list.html", packages=h.featured_packages() %}
+        </div>
+        <h3 style="text-align:left;"><a href="{% url_for '/dataset' %}">{{ _('All Datasets') }}</a></h3>
+    </div>
+</div>
