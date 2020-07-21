@@ -1,6 +1,6 @@
 # CKAN Plugin for open.data.org.il modifications
 
-This is a [CKAN]() plugin containing custom modifications served on https://open.data.org.il/
+This is a [CKAN](https://github.com/ckan/ckan) 2.8 plugin containing custom modifications served on https://open.data.org.il/
 
 ## Install
 
