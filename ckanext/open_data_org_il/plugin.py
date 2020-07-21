@@ -24,5 +24,13 @@ class OpenDataOrgIlPlugin(plugins.SingletonPlugin):
             })
         return PLUGIN_CACHE["settings_group"]
 
+    def get_featured_organizations(self, *args, **kwargs):
+        return get_action("organization_list")(data_dict={
+            "sort": "name asc",  # "package_count desc"
+            "all_fields": True,
+            "include_dataset_count": True,
+        })
+
     def get_helpers(self):
-        return {'settings': self.get_settings_group}
+        return {'settings': self.get_settings_group,
+                'featured_organizations': self.get_featured_organizations}
