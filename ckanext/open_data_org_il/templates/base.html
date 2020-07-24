@@ -2,8 +2,8 @@
 
 {%- block meta -%}
   {{ super() }}
-  <meta name="og:image" content="{{ h.settings().og_image }}" />
-  <meta name="og:image:alt" content="{{ h.settings().og_image_alt }}" />
+  <meta property="og:image" content="{{ h.settings().og_image }}" />
+  <meta property="og:image:alt" content="{{ h.settings().og_image_alt }}" />
 {%- endblock -%}
 
 {% block styles %}
