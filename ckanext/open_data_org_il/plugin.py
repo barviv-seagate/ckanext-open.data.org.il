@@ -21,12 +21,18 @@ class OpenDataOrgIlPlugin(plugins.SingletonPlugin, DefaultTranslation):
 
     def get_settings_group(self, *args, **kwargs):
         if "settings_group" not in PLUGIN_CACHE:
-            PLUGIN_CACHE["settings_group"] = get_action("group_show")(data_dict={
-                "id": "settings",
-                "include_extras": True,
-                "include_dataset_count": False, "include_users": False, "include_groups": False, "include_tags": False,
-                "include_followers": False
-            })
+            try:
+                PLUGIN_CACHE["settings_group"] = get_action("group_show")(data_dict={
+                    "id": "settings",
+                    "include_extras": True,
+                    "include_dataset_count": False, "include_users": False, "include_groups": False, "include_tags": False,
+                    "include_followers": False
+                })
+            except Exception:
+                PLUGIN_CACHE["settings_group"] = {
+                    "og_image": "",
+                    "og_image_alt": ""
+                }
         return PLUGIN_CACHE["settings_group"]
 
     def get_featured_organizations(self, *args, **kwargs):
